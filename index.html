@@ -11,6 +11,16 @@
             margin: 0;
             padding: 0;
         }
+        #btn {
+            width: 50px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(209,209,209,0.3);
+            position: absolute;
+            top: 30%;
+            left: 30%;
+        }
         .tips {
             display: none;
             position: absolute;
@@ -58,6 +68,9 @@
         .active {
             display: block;
         }
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -84,15 +97,19 @@
     btn.addEventListener('click',function(e){
         e.stopPropagation();
         tips.classList.add('active');
+        btn.classList.add('hide');
     })
     cancel.addEventListener('click',function () {
         tips.classList.remove('active');
+        btn.classList.remove('hide');
     })
     cancel1.addEventListener('click',function () {
         tips.classList.remove('active');
+        btn.classList.remove('hide');
     })
     document.addEventListener('click',function(){
         tips.classList.remove('active');
+        btn.classList.remove('hide');
     })
     tips.addEventListener('click',function(e){
         e.stopPropagation();
